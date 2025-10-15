@@ -1,0 +1,16 @@
+graph = {
+ 'A': {'B','C'},
+ 'B': {'A','D','E'},
+ 'C': {'A','F'},
+ 'D': {'B'},
+ 'E': {'B','F'},
+ 'F': {'C','E'}
+}
+print("Ahmed Shaikh 323")
+def dfs(g, n, v=None):
+ v = v or []
+ if n not in v:
+   v.append(n)
+   for x in g[n]: dfs(g, x, v)
+   return v
+print(dfs(graph, 'A'))
