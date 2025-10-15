@@ -1,0 +1,37 @@
+def is_safe(b, r, c):
+    for i in range(c):
+        if b[r][i] == 1:
+            return False
+    for i, j in zip(range(r, -1, -1), range(c, -1, -1)):
+        if b[i][j] == 1:
+            return False
+    for i, j in zip(range(r, len(b)), range(c, -1, -1)):
+        if b[i][j] == 1:
+            return False
+    return True
+
+print("Ahmed Shaikh 323")
+
+def solve(b, c):
+    if c >= len(b):
+        return True
+    for i in range(len(b)):
+        if is_safe(b, i, c):
+            b[i][c] = 1
+            if solve(b, c + 1):
+                return True
+            b[i][c] = 0
+    return False
+
+def print_board(b):
+    for r in b:
+        print(" ".join(map(str, r)))
+
+def solve_4q():
+    b = [[0] * 4 for _ in range(4)]
+    if solve(b, 0):
+        print_board(b)
+    else:
+        print("No solution exists")
+
+solve_4q()
