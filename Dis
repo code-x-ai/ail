@@ -1,0 +1,13 @@
+a = int(input("Enter the first number: "))
+b = int(input("Enter the second number: "))
+c = int(input("Enter the third number: "))
+print("Distributive Law")
+print("A * (B * C) =", a * (b * c))
+print("(A * B) * C =", (a * b) * c)
+
+a = int(input("Enter the first number: "))
+b = int(input("Enter the second number: "))
+c = int(input("Enter the third number: "))
+print("Distributive Law")
+print("A * (B + C) =", a * (b + c))
+print("(A * B) + (A * C) =", (a * b) + (a * c))
